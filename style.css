@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  text-align: center;
+}
+body {
+  background-image: url(./images/wood.jpg);
+  display: flex;
+  justify-content: center;
+}
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+.terning {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: roll 3s infinite linear;
+}
+.terning::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.terning::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3498db, #e74c3c);
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: rotateX(90deg);
+}
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  width: 1300px;
+  border: solid black 7px;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.gul,
+.grønn,
+.blå,
+.rød {
+  width: 300px;
+  height: 300px;
+  border: 100px solid transparent;
+  box-shadow: #333 2px 2px;
+}
+.rødrute,
+.gulrute,
+.grønnrute,
+.blårute {
+  border: solid black 2px;
+}
+
+.rød {
+  border-color: red;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+}
+.rødrute {
+  background-color: red;
+  border-radius: 90px;
+  width: 90px;
+  height: 90px;
+}
+.topfelt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 240px;
+  height: 480px;
+  margin-right: 8px;
+}
+.toprutehvit {
+  border-color: black;
+  border-style: solid;
+  border-width: 1.5px;
+  width: 80px;
+  height: 80.7px;
+}
+.toprutegrå {
+  border: solid black 1.5px;
+  background-color: lightgray;
+}
+.toprutegrønn {
+  border: solid black 1.5px;
+  background-color: lightgreen;
+}
+
+svg {
+  background-size: auto;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  color: grey;
+}
+.grønn {
+  border-color: green;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+}
+.grønnrute {
+  background-color: green;
+  border-radius: 90px;
+  width: 90px;
+  height: 90px;
+}
+.middle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.midfelt {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.topruterød {
+  border: solid black 1.5px;
+  background-color: lightcoral;
+}
+.toprutegul {
+  border: solid black 1.5px;
+  background-color: #ebde59;
+}
+.mål {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.rødtriangel,
+.grønntriangel,
+.gultriangel,
+.blåtriangel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+}
+.rødtriangel {
+  border-bottom: 125px solid transparent;
+  border-top: 125px solid transparent;
+  border-left: 125px solid red;
+}
+.grønntriangel {
+  border-right: 125px solid transparent;
+  border-left: 125px solid transparent;
+  border-top: 125px solid green;
+  top: 0;
+  left: 0px;
+}
+.gultriangel {
+  border-bottom: 125px solid transparent;
+  border-top: 125px solid transparent;
+  border-right: 125px solid yellow;
+  top: 0;
+  left: 125px;
+}
+.blåtriangel {
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  border-bottom: 125px solid blue;
+  top: 125px;
+  left: 0;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+}
+.blå {
+  border-color: blue;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+}
+.blårute {
+  background-color: blue;
+  border-radius: 90px;
+  width: 90px;
+  height: 90px;
+}
+.topruteblå {
+  border: solid black 1.5px;
+  background-color: #5993f0;
+}
+.gul {
+  border-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  place-items: center;
+}
+.gulrute {
+  background-color: yellow;
+  border-radius: 90px;
+  width: 90px;
+  height: 90px;
+}
